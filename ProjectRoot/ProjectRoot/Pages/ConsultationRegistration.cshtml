@@ -1,0 +1,51 @@
+﻿@page
+@model ConsultationRegistrationModel
+@{
+    ViewData["Title"] = "Consultation Registration";
+}
+
+<h1>Consultation Registration</h1>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+<form method="post">
+    <div>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="FullName" required />
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="Email" required />
+    </div>
+    <div>
+        <label for="consultationDate">Consultation Date:</label>
+        <input type="date" id="consultationDate" name="ConsultationDate" required />
+    </div>
+    <div>
+        <label for="product">Product:</label>
+        <select id="product" name="Product" required>
+            <option value="JavaScript">JavaScript</option>
+            <option value="C#">C#</option>
+            <option value="Java">Java</option>
+            <option value="Python">Python</option>
+            <option value="Basics">Basics</option>
+        </select>
+    </div>
+    <button type="submit">Register</button>
+</form>
+
+<script>
+    document.getElementById('consultationDate').addEventListener('change', function () {
+        var selectedDate = new Date(this.value);
+        var selectedDayOfWeek = selectedDate.getDay();
+        var selectedProduct = document.getElementById('product').value;
+
+        if (selectedDayOfWeek === 1 && selectedProduct === 'Basics') {
+            alert('Consultation on Basics cannot be scheduled on Mondays.');
+            this.value = '';
+        }
+    });
+</script>

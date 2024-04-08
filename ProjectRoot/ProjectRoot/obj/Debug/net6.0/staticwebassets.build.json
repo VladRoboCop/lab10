@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "xI9RZHohkxCXN/eKzTy6QUYCridMNAn+TSFpCTOfqVk=",
+  "Source": "ProjectRoot",
+  "BasePath": "_content/ProjectRoot",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ProjectRoot\\wwwroot",
+      "Source": "ProjectRoot",
+      "ContentRoot": "D:\\Microsoft Visual Studio\\source\\repos\\ProjectRoot\\ProjectRoot\\wwwroot\\",
+      "BasePath": "_content/ProjectRoot",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
